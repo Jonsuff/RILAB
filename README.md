@@ -1,1 +1,1 @@
-# RILAB
+# Robotic and Intelligence Lab
