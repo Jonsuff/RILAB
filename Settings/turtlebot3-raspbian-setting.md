@@ -92,7 +92,6 @@ $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 $ git clone https://github.com/ROBOTIS-GIT/turtlebot3.git
 $ cd ~/catkin_ws/src/turtlebot3
 $ sudo rm -r turtlebot3_description/ turtlebot3_teleop/ turtlebot3_navigation/ turtlebot3_slam/ turtlebot3_example/
-$ sudo apt install ros-melodic-rosserial-python ros-melodic-tf
 $ source /opt/ros/melodic/setup.bash
 $ catkin_make
 실패 시 없는 package 설치 후 catkin_make 다시 진행
@@ -110,6 +109,16 @@ $ source ~/.bashrc
 
 7. 설치 확인
 $ roscore
+
+8. turtlebot3_bringup 실행할때 오류 발생
+$ cd ~/ros_catkin_ws
+$ sudo rm -rf *
+$ rosinstall_generator rosserial --rosdistro melodic --deps --wet-only --tar > melodic-rosserial-wet.rosinstall
+$ wstool init src melodic-rossrial-wet.rosinstall
+$ cd ~/ros_catkin_ws
+$ sudo rm -rf *
+$ rosinstall_generator common_msgs --rosdistro melodic --deps --wet-only --tar > melodic-common_msgs-wet.rosinstall
+$ wstool init src melodic-common_msgs-wet.rosinstall
 ```
 
 # 2. 라즈비안에 opencv 설치
